@@ -26,6 +26,11 @@ header {
   border-bottom: .1rem solid rgba(255, 255, 255, .15);
 }
 
+.main-logo {
+  border-radius: 50%;
+  width: 5rem;
+}
+
 main {
   padding: 1rem;
 }
