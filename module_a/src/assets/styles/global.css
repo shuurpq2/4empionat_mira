@@ -1,6 +1,9 @@
 :root {
+  /* dark-theme colors */
   --dark-bg-color: #463F3A;
   --dark-text-color: #F4F3EE;
+
+  /* light-theme colors */
   --light-bg-color: #BCB8B1;
   --light-text-color: #2b2623;
 }
@@ -8,4 +11,27 @@
 html {
   background-color: var(--dark-bg-color);
   color: var(--dark-text-color);
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  background-color: rgba(255, 255, 255, .15);
+  padding: 1rem;
+  border-bottom: .1rem solid rgba(255, 255, 255, .15);
+}
+
+main {
+  padding: 1rem;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, .15);
+  padding: 1rem;
+  border-top: .1rem solid rgba(255, 255, 255, .15);
 }
