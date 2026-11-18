@@ -1,4 +1,10 @@
+main {
+  display: flex;
+  gap: 1rem;
+}
+
 .slider {
+  height: fit-content;
   width: fit-content;
   background-color: rgba(255, 255, 255, .30);
   border-radius: 2rem;
@@ -82,4 +88,131 @@
 #slide2:checked ~ .slider__controls label[for="slide2"],
 #slide3:checked ~ .slider__controls label[for="slide3"] {
   opacity: 1;
+}
+
+.infographic {
+  height: fit-content;
+  padding: .5rem;
+  width: fit-content;
+  display: flex;
+  background-color: rgba(255, 255, 255, .30);
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 2rem;
+}
+
+.infographic__graphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.graph {
+  border-radius: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, .15);
+  box-shadow: 0 0 .25rem .015rem black;
+  transition: all .15s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, .2);
+  }
+}
+
+.graph__elems {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .25rem;
+  align-items: end;
+}
+
+.graph__elem {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  -webkit-text-stroke: .1rem black;
+  paint-order: stroke fill;
+  font-weight: bold;
+  transition: all .15s;
+  border: .1rem solid black;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.graph__elems {
+  & > :first-child {
+    background-color: rgb(224, 160, 160);
+  }
+
+  & > :nth-child(2) {
+    background-color: rgb(224, 185, 160);
+  }
+
+  & > :last-child {
+    background-color: rgb(224, 198, 160);
+  }
+}
+
+.graph--prices-graph > .graph__elems {
+  & > :first-child {
+    height: 100%;
+  }
+
+  & > :nth-child(2) {
+    height: 50%;
+  }
+
+  & > :last-child {
+    height: 25%;
+  }
+}
+
+.graph--discounts-graph > .graph__elems {
+  & > :first-child {
+    height: 8%;
+  }
+
+  & > :nth-child(2) {
+    height: 33%;
+  }
+
+  & > :last-child {
+    height: 100%;
+  }
+}
+
+.graph--support-graph > .graph__elems {
+  & > :first-child {
+    height: 100%;
+  }
+
+  & > :nth-child(2) {
+    height: 44%;
+  }
+
+  & > :last-child {
+    height: 7%;
+  }
+}
+
+.graph--buy-graph > .graph__elems {
+  & > :first-child {
+    height: 100%;
+  }
+
+  & > :nth-child(2) {
+    height: 71%;
+  }
+
+  & > :last-child {
+    height: 35%;
+  }
 }
