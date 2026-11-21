@@ -1,6 +1,14 @@
 # cache
-__pycache__
+__pycache__/
 
-# misc
-venv
+# users
+media/
+
+# venv
+venv/
+
+# secrets
 .env
+
+# db
+*.sqlite3
