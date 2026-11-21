@@ -1,5 +1,5 @@
 """
-WSGI config for ed_plat project.
+WSGI config for module_b project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ed_plat.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'module_b.settings')
 
 application = get_wsgi_application()

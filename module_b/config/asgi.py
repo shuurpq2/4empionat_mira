@@ -1,5 +1,5 @@
 """
-ASGI config for ed_plat project.
+ASGI config for module_b project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ed_plat.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'module_b.settings')
 
 application = get_asgi_application()
