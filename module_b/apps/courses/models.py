@@ -18,21 +18,22 @@ class Course(models.Model):
     super().clean()
 
     if self.start_date and self.end_date:
-      if self.start_date > self.end_date: raise ValidationError({"end_date": "Дата окончания должна быть позже даты начала"})
+      if self.start_date > self.end_date:
+        raise ValidationError({"end_date": "Дата окончания должна быть позже даты начала"})
 
   def save(self, *args, **kwargs):
     super().save(*args, **kwargs)
 
     if self.cover:
       img_path = self.cover.path
+      output_size = (300, 300)
+
       with Image.open(img_path) as img:
-        output_size = (300, 300)
-        if img.width > output_size[0] or img.height > output_size[1]:
-          folder, filename = os.path.split(img_path)
-          thumb_path = os.path.join(folder, f"mpic{filename}")
-          
-          img.thumbnail(output_size)
-          img.save(thumb_path)
+        folder, filename = os.path.split(img_path)
+        thumb_path = os.path.join(folder, f"mpic{filename}")
+        
+        img.thumbnail(output_size)
+        img.save(thumb_path)
 
   def __str__(self):
     return f"{self.title}"
