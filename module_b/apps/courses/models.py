@@ -60,5 +60,12 @@ class Lesson(models.Model):
     return f"{self.title}"
 
 class Enrollment(models.Model):
+  class PaymentStatus(models.TextChoices):
+    WAIT = "WAIT", "Ожидает оплаты"
+    PAID = "PAID", "Оплачено"
+    PERR = "PERR", "Ошибка оплаты"
+
   student = models.ForeignKey(Student, verbose_name="Студент", on_delete=models.CASCADE, related_name="enrollments")
   course = models.ForeignKey(Course, verbose_name="Курс", on_delete=models.CASCADE, related_name="enrollments")
+  enroll_time = models.DateTimeField("Дата записи", auto_now_add=True)
+  payment_status = models.CharField("Статус оплаты", choices=PaymentStatus.choices, default=PaymentStatus.WAIT)
