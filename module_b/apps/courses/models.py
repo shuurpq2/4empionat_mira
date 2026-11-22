@@ -8,8 +8,8 @@ import os
 class Course(models.Model):
   title = models.CharField("Название", max_length=30)
   description = models.CharField("Описание", max_length=100, blank=True, null=True)
-  duration = models.PositiveIntegerField("Продолжительность (ч)", validators=[MaxValueValidator(10)])
-  price = models.DecimalField("Цена", validators=[MinValueValidator(100)])
+  duration = models.PositiveIntegerField("Продолжительность (ч)", validators=[MaxValueValidator(10, "Максимальная продолжительность курса 10 часов")])
+  price = models.DecimalField("Цена", validators=[MinValueValidator(100, "Минимальная стоимость курса 100 рублей")])
   start_date = models.DateTimeField("Дата начала")
   end_date = models.DateTimeField("Дата окончания")
   cover = models.ImageField("Обложка", upload_to="courses/covers/", validators=[validate_image_size])
@@ -34,6 +34,15 @@ class Course(models.Model):
         
         img.thumbnail(output_size)
         img.save(thumb_path)
+
+  def __str__(self):
+    return f"{self.title}"
+
+class Lesson(models.Model):
+  title = models.CharField("Название", max_length=50)
+  text_content = models.CharField("Содержание")
+  video_link = models.CharField("Видеоссылка SuperTube", blank=True, null=True)
+  duration = models.PositiveIntegerField("Длительность (ч)", validators=[MaxValueValidator(4, "Максимальная длительность урока 4 часа")])
 
   def __str__(self):
     return f"{self.title}"
