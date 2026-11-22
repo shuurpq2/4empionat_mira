@@ -69,3 +69,12 @@ class Enrollment(models.Model):
   course = models.ForeignKey(Course, verbose_name="Курс", on_delete=models.CASCADE, related_name="enrollments")
   enroll_time = models.DateTimeField("Дата записи", auto_now_add=True)
   payment_status = models.CharField("Статус оплаты", choices=PaymentStatus.choices, default=PaymentStatus.WAIT)
+
+  class Meta:
+    constraints = [
+      models.UniqueConstraint(
+        fields=["student", "course"],
+        name="unique_student_course",
+        violation_error_message="Этот студент уже записан на этот курс"
+      )
+    ]
