@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # my apps
     "apps.students",
+    "apps.courses",
 ]
 
 MIDDLEWARE = [
