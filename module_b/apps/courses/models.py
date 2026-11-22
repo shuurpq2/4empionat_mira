@@ -43,6 +43,7 @@ class Lesson(models.Model):
   text_content = models.CharField("Содержание")
   video_link = models.CharField("Видеоссылка SuperTube", validators=[validate_supertube_link], blank=True, null=True)
   duration = models.PositiveIntegerField("Длительность (ч)", validators=[MaxValueValidator(4, "Максимальная длительность урока 4 часа")])
+  course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="lessons")
 
   def __str__(self):
     return f"{self.title}"
