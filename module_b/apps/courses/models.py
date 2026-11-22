@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from .validators import validate_image_size
 
 class Course(models.Model):
   title = models.CharField("Название", max_length=30)
@@ -8,7 +9,7 @@ class Course(models.Model):
   price = models.DecimalField("Цена", validators=[MinValueValidator(100)])
   start_date = models.DateTimeField("Дата начала")
   end_date = models.DateTimeField("Дата окончания")
-  img = models.ImageField("Обложка", upload_to="courses/covers/")
+  cover = models.ImageField("Обложка", upload_to="courses/covers/", validators=[validate_image_size])
 
   def __str__(self):
     return f"{self.title}"
