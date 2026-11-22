@@ -8,5 +8,7 @@ def validate_image_size(image: ImageFieldFile) -> None:
     raise ValidationError(f"Максимальный размер картинки - {max_size_kb} Кб")
 
 def validate_supertube_link(link: str) -> None:
-  if not link.startswith("https://super-tube.cc/video/v"):
+  prefix = "https://super-tube.cc/video/v"
+
+  if not (link.startswith(prefix) and link.removeprefix(prefix).isdigit()):
     raise ValidationError(f"Видеоссылка не валидна")
