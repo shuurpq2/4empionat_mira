@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.exceptions import ValidationError
-from .validators import validate_image_size
+from .validators import validate_image_size, validate_supertube_link
 from PIL import Image
 import os
 
@@ -41,7 +41,7 @@ class Course(models.Model):
 class Lesson(models.Model):
   title = models.CharField("Название", max_length=50)
   text_content = models.CharField("Содержание")
-  video_link = models.CharField("Видеоссылка SuperTube", blank=True, null=True)
+  video_link = models.CharField("Видеоссылка SuperTube", validators=[validate_supertube_link], blank=True, null=True)
   duration = models.PositiveIntegerField("Длительность (ч)", validators=[MaxValueValidator(4, "Максимальная длительность урока 4 часа")])
 
   def __str__(self):
