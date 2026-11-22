@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.exceptions import ValidationError
+from apps.students.models import Student
 from .validators import validate_image_size, validate_supertube_link
 from PIL import Image
 import os
@@ -13,6 +14,7 @@ class Course(models.Model):
   start_date = models.DateTimeField("Дата начала")
   end_date = models.DateTimeField("Дата окончания")
   cover = models.ImageField("Обложка", upload_to="courses/covers/", validators=[validate_image_size])
+  students = models.ManyToManyField(Student, through="Enrollment")
 
   def clean(self):
     super().clean()
@@ -56,3 +58,7 @@ class Lesson(models.Model):
 
   def __str__(self):
     return f"{self.title}"
+
+class Enrollment(models.Model):
+  student = models.ForeignKey(Student, verbose_name="Студент", on_delete=models.CASCADE, related_name="enrollments")
+  course = models.ForeignKey(Course, verbose_name="Курс", on_delete=models.CASCADE, related_name="enrollments")
