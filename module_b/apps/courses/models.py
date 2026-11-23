@@ -71,7 +71,7 @@ class Enrollment(models.Model):
   payment_status = models.CharField("Статус оплаты", choices=PaymentStatus.choices, default=PaymentStatus.WAIT)
 
   def __str__(self):
-    return f"[{self.enroll_time.date()}] {self.student.fio} - {self.course.title} ({self.get_payment_status_display()})"
+    return f"[{self.enroll_time.date()}] {self.student.fio} ({self.student.user.email}) - {self.course.title} ({self.get_payment_status_display()})"
 
   class Meta:
     constraints = [
