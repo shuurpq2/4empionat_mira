@@ -127,6 +127,10 @@ footer {
   border-top: .1rem solid var(--current-separators-color);
 }
 
+.footer__info {
+  width: fit-content;
+}
+
 .footer__info-point {
   font-size: .85rem;
   opacity: .75;
