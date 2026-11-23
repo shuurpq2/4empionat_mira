@@ -1,4 +1,6 @@
 :root {
+  --theme: light;
+
   /* Цвета светлой темы */
   --light-main-bg-color: #FAF8F5;
   --light-secondary-bg-color: #F2EDE4;
@@ -20,13 +22,19 @@
 }
 
 * {
-  color: var(--light-main-text-color);
+  color: if(
+    style(--theme: light): var(--light-main-text-color);
+    else: var(--dark-main-text-color);
+  );
   font-family: sans-serif;
   border: none;
 }
 
 html {
-  background-color: var(--light-main-bg-color);
+  background-color: if(
+    style(--theme: light): var(--light-main-bg-color);
+    else: var(--dark-main-bg-color);
+  );
 }
 
 body {
@@ -35,13 +43,22 @@ body {
   min-height: 100vh;
 }
 
+header, footer {
+  background-color: if(
+    style(--theme: light): var(--light-secondary-bg-color);
+    else: var(--dark-secondary-bg-color);
+  );
+}
+
 header {
   display: flex;
   align-items: center;
   padding: .5rem;
   gap: .5rem;
-  background-color: var(--light-secondary-bg-color);
-  border-bottom: .1rem solid var(--light-separators-color);
+  border-bottom: .1rem solid if(
+    style(--theme: light): var(--light-separators-color);
+    else: var(--dark-separators-color);
+  );
 }
 
 #logo {
@@ -64,23 +81,38 @@ header {
   transition: all .15s;
 
   &:hover {
-    color: var(--light-secondary-text-color);
+    color: if(
+      style(--theme: light): var(--light-secondary-text-color);
+      else: var(--dark-secondary-text-color);
+    );
   }
 }
 
 .nav__page-link--current {
-  color: var(--light-secondary-text-color);
+  color: if(
+    style(--theme: light): var(--light-secondary-text-color);
+    else: var(--dark-secondary-text-color);
+  );
 }
 
 #go-to-search input {
   width: 15rem;
   padding: .5rem;
   border-radius: var(--global-border-radius);
-  border: .1rem solid var(--light-separators-color);
-  background-color: var(--light-main-bg-color);
+  border: .1rem solid if(
+    style(--theme: light): var(--light-separators-color);
+    else: var(--dark-separators-color);
+  );
+  background-color: if(
+    style(--theme: light): var(--light-main-bg-color);
+    else: var(--dark-main-bg-color);
+  );
 
   &::placeholder {
-    color: var(--light-main-text-color);
+    color: if(
+      style(--theme: light): var(--light-main-text-color);
+      else: var(--dark-main-text-color);
+    );
     opacity: .75;
   }
 }
@@ -94,8 +126,10 @@ footer {
   flex-direction: column;
   gap: .5rem;
   padding: .5rem;
-  background-color: var(--light-secondary-bg-color);
-  border-top: .1rem solid var(--light-separators-color);
+  border-top: .1rem solid if(
+    style(--theme: light): var(--light-separators-color);
+    else: var(--dark-separators-color);
+  );
 }
 
 .footer__info-point {
