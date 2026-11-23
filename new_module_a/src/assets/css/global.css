@@ -1,6 +1,4 @@
 :root {
-  --theme: light;
-
   /* Цвета светлой темы */
   --light-main-bg-color: #FAF8F5;
   --light-secondary-bg-color: #F2EDE4;
@@ -17,24 +15,45 @@
   --dark-secondary-text-color: #9E978E;
   --dark-accent-color: #E08E45;
 
+  /* Настройка темы */
+  --theme: light;
+  --current-main-bg-color: if(
+      style(--theme: light): var(--light-main-bg-color);
+      else: var(--dark-main-bg-color);
+    );
+  --current-secondary-bg-color: if(
+      style(--theme: light): var(--light-secondary-bg-color);
+      else: var(--dark-secondary-bg-color);
+    );
+  --current-separators-color: if(
+      style(--theme: light): var(--light-separators-color);
+      else: var(--dark-separators-color);
+    );
+  --current-main-text-color: if(
+      style(--theme: light): var(--light-main-text-color);
+      else: var(--dark-main-text-color);
+    );
+  --current-secondary-text-color: if(
+      style(--theme: light): var(--light-secondary-text-color);
+      else: var(--dark-secondary-text-color);
+    );
+  --current-accent-color: if(
+      style(--theme: light): var(--light-accent-color);
+      else: var(--dark-accent-color);
+    );
+
   /* Другие переменные */
   --global-border-radius: .25rem;
 }
 
 * {
-  color: if(
-    style(--theme: light): var(--light-main-text-color);
-    else: var(--dark-main-text-color);
-  );
+  color: var(--current-main-text-color);
   font-family: sans-serif;
   border: none;
 }
 
 html {
-  background-color: if(
-    style(--theme: light): var(--light-main-bg-color);
-    else: var(--dark-main-bg-color);
-  );
+  background-color: var(--current-main-bg-color);
 }
 
 body {
@@ -44,10 +63,7 @@ body {
 }
 
 header, footer {
-  background-color: if(
-    style(--theme: light): var(--light-secondary-bg-color);
-    else: var(--dark-secondary-bg-color);
-  );
+  background-color: var(--current-secondary-bg-color);
 }
 
 header {
@@ -55,10 +71,7 @@ header {
   align-items: center;
   padding: .5rem;
   gap: .5rem;
-  border-bottom: .1rem solid if(
-    style(--theme: light): var(--light-separators-color);
-    else: var(--dark-separators-color);
-  );
+  border-bottom: .1rem solid var(--current-separators-color);
 }
 
 #logo {
@@ -81,38 +94,23 @@ header {
   transition: all .15s;
 
   &:hover {
-    color: if(
-      style(--theme: light): var(--light-secondary-text-color);
-      else: var(--dark-secondary-text-color);
-    );
+    color: var(--current-secondary-text-color);
   }
 }
 
 .nav__page-link--current {
-  color: if(
-    style(--theme: light): var(--light-secondary-text-color);
-    else: var(--dark-secondary-text-color);
-  );
+  color: var(--current-secondary-text-color);
 }
 
 #go-to-search input {
   width: 15rem;
   padding: .5rem;
   border-radius: var(--global-border-radius);
-  border: .1rem solid if(
-    style(--theme: light): var(--light-separators-color);
-    else: var(--dark-separators-color);
-  );
-  background-color: if(
-    style(--theme: light): var(--light-main-bg-color);
-    else: var(--dark-main-bg-color);
-  );
+  border: .1rem solid var(--current-separators-color);
+  background-color: var(--current-main-bg-color);
 
   &::placeholder {
-    color: if(
-      style(--theme: light): var(--light-main-text-color);
-      else: var(--dark-main-text-color);
-    );
+    color: var(--current-main-text-color);
     opacity: .75;
   }
 }
@@ -126,10 +124,7 @@ footer {
   flex-direction: column;
   gap: .5rem;
   padding: .5rem;
-  border-top: .1rem solid if(
-    style(--theme: light): var(--light-separators-color);
-    else: var(--dark-separators-color);
-  );
+  border-top: .1rem solid var(--current-separators-color);
 }
 
 .footer__info-point {
