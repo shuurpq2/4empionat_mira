@@ -1,0 +1,9 @@
+:root {
+  /* Цвета светлой темы */
+  --light-bg-color: #fff;
+  --light-text-color: #000;
+
+  /* Цвета темной темы */
+  --dark-bg-color: #000;
+  --dark-text-color: #fff;
+}
