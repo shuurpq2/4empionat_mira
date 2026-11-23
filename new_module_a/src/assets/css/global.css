@@ -1,9 +1,25 @@
 :root {
   /* Цвета светлой темы */
-  --light-bg-color: #fff;
-  --light-text-color: #000;
+  --light-main-bg-color: #FAF8F5;
+  --light-secondary-bg-color: #F2EDE4;
+  --light-separators-color: #E4DDD0;
+  --light-main-text-color: #24211E;
+  --light-secondary-text-color: #69635B;
+  --light-accent-color: #B45309;
 
   /* Цвета темной темы */
-  --dark-bg-color: #000;
-  --dark-text-color: #fff;
+  --dark-main-bg-color: #181614;
+  --dark-secondary-bg-color: #23201D;
+  --dark-separators-color: #332F2B;
+  --dark-main-text-color: #E6E1DA;
+  --dark-secondary-text-color: #9E978E;
+  --dark-accent-color: #E08E45;
+}
+
+* {
+  color: var(--light-main-text-color)
+}
+
+html {
+  background-color: var(--light-main-bg-color);
 }
