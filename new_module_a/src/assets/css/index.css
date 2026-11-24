@@ -68,3 +68,25 @@ main {
     width: 75%;
   }
 }
+
+#popular-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#popular-section-title {
+  font-size: 1.25rem;
+}
+
+#landmark-cards {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.landmark-card {
+  display: flex;
+  flex-direction: column;
+}
