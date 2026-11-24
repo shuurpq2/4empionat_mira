@@ -55,7 +55,7 @@ main {
   transition: all .25s;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.025);
     color: var(--current-main-text-color);
   }
 
@@ -74,6 +74,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
 #popular-section-title {
@@ -81,12 +82,46 @@ main {
 }
 
 #landmark-cards {
-  width: 75%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .landmark-card {
+  width: 15vw;
+  padding: .5rem;
   display: flex;
   flex-direction: column;
+  border-radius: var(--global-border-radius);
+  background-color: var(--current-secondary-bg-color);
+  transition: all .25s;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+}
+
+.landmark-card__title {
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+.landmark-card__subinfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landmark-card__category, .landmark-card__author {
+  color: var(--current-secondary-text-color);
+}
+
+.landmark-card__rating {
+  font-size: 3rem;
+  line-height: 2.5rem;
+  text-align: center;
+  color: var(--current-accent-color);
+}
+
+.landmark-card__more-button {
+  background-color: var(--current-main-bg-color);
 }

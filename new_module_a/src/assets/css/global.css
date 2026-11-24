@@ -130,7 +130,7 @@ main {
   cursor: pointer;
 
   &:hover {
-    background-color: color-mix(in srgb, var(--current-secondary-bg-color), black 5%);
+    opacity: .75;
   }
 }
 
