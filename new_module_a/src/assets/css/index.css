@@ -3,6 +3,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 #search-section {
@@ -91,6 +92,8 @@ main {
   width: 15vw;
   padding: .5rem;
   display: flex;
+  justify-content: space-between;
+  gap: .25rem;
   flex-direction: column;
   border-radius: var(--global-border-radius);
   background-color: var(--current-secondary-bg-color);
@@ -98,6 +101,10 @@ main {
 
   &:hover {
     transform: scale(1.025);
+  }
+
+  & > img {
+    border-radius: inherit;
   }
 }
 
