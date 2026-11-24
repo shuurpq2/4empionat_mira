@@ -1,0 +1,16 @@
+#search-section {
+  width: fit-content;
+  display: flex;
+  border: .1rem solid var(--current-separators-color);
+  border-radius: var(--global-border-radius);
+
+  & input {
+    border: none;
+    background-color: transparent;
+  }
+}
+
+#search-button {
+  border-radius: 0;
+  border-left: .1rem solid var(--current-separators-color);
+}

@@ -102,8 +102,7 @@ header {
   color: var(--current-secondary-text-color);
 }
 
-#go-to-search input {
-  width: 15rem;
+.search {
   padding: .5rem;
   border-radius: var(--global-border-radius);
   border: .1rem solid var(--current-separators-color);
@@ -115,8 +114,24 @@ header {
   }
 }
 
+#go-to-search input {
+  width: 15rem;
+}
+
 main {
   padding: .5rem;
+}
+
+.button {
+  padding: .5rem;
+  border-radius: var(--global-border-radius);
+  background-color: var(--current-secondary-bg-color);
+  transition: all .15s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--current-secondary-bg-color), black 5%);
+  }
 }
 
 footer {
