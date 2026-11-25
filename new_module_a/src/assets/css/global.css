@@ -132,6 +132,10 @@ main {
   &:hover {
     opacity: .75;
   }
+
+  &:active {
+    opacity: 1;
+  }
 }
 
 footer {

@@ -103,6 +103,11 @@ main {
     transform: scale(1.025);
   }
 
+  &:active {
+    transform: scale(0.975);
+    opacity: .75;
+  }
+
   & > img {
     border-radius: inherit;
   }
