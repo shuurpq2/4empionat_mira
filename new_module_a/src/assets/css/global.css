@@ -46,6 +46,7 @@
   --global-border-radius: .25rem;
 }
 
+/* Конкретные */
 * {
   color: var(--current-main-text-color);
   font-family: sans-serif;
@@ -102,40 +103,12 @@ header {
   color: var(--current-secondary-text-color);
 }
 
-.search {
-  padding: .5rem;
-  border-radius: var(--global-border-radius);
-  border: .1rem solid var(--current-separators-color);
-  background-color: var(--current-main-bg-color);
-
-  &::placeholder {
-    color: var(--current-main-text-color);
-    opacity: .75;
-  }
-}
-
 #go-to-search input {
   width: 15rem;
 }
 
 main {
   padding: .5rem;
-}
-
-.button {
-  padding: .5rem;
-  border-radius: var(--global-border-radius);
-  background-color: var(--current-secondary-bg-color);
-  transition: all .15s;
-  cursor: pointer;
-
-  &:hover {
-    filter: brightness(1.03);
-  }
-
-  &:active {
-    filter: brightness(.95);
-  }
 }
 
 footer {
@@ -157,5 +130,34 @@ footer {
 
   &:hover {
     opacity: 1;
+  }
+}
+
+/* Абстрактные */
+.button {
+  padding: .5rem;
+  border-radius: var(--global-border-radius);
+  background-color: var(--current-secondary-bg-color);
+  transition: all .15s;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.03);
+  }
+
+  &:active {
+    filter: brightness(.95);
+  }
+}
+
+.search {
+  padding: .5rem;
+  border-radius: var(--global-border-radius);
+  border: .1rem solid var(--current-separators-color);
+  background-color: var(--current-main-bg-color);
+
+  &::placeholder {
+    color: var(--current-main-text-color);
+    opacity: .75;
   }
 }
