@@ -139,3 +139,96 @@ main {
 .landmark-card__more-button {
   background-color: var(--current-main-bg-color);
 }
+
+.slider {
+  position: relative;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--current-secondary-bg-color);
+  padding: .5rem;
+  border-radius: var(--global-border-radius);
+}
+
+.slider__title {
+  font-size: 1.25rem;
+}
+
+.slider__window {
+  container-type: inline-size;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.slider__track {
+  display: flex;
+  transition: all .25s;
+}
+
+.slide {
+  width: 100cqw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.slide__img {
+  width: 100%;
+  border-radius: var(--global-border-radius);
+}
+
+.slide__title {
+
+}
+
+.slide__description {
+  color: var(--current-secondary-text-color)
+}
+
+.slider__indicators {
+  position: absolute;
+  width: 100%;
+  top: 65%;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.slider__indicator {
+  color: var(--current-main-bg-color);
+  paint-order: stroke fill;
+  font-size: 4rem;
+  cursor: pointer;
+  opacity: .75;
+  transition: all .15s;
+}
+
+.slider__hidden-radio {
+  display: none;
+}
+
+#slide1:checked ~ .slider__indicators label[for="slide1"],
+#slide2:checked ~ .slider__indicators label[for="slide2"],
+#slide3:checked ~ .slider__indicators label[for="slide3"],
+#slide4:checked ~ .slider__indicators label[for="slide4"] {
+  opacity: 1;
+}
+
+#slide1:checked ~ .slider__window .slider__track {
+  transform: translate(0);
+}
+
+#slide2:checked ~ .slider__window .slider__track {
+  transform: translate(-25%);
+}
+
+#slide3:checked ~ .slider__window .slider__track {
+  transform: translate(-50%);
+}
+
+#slide4:checked ~ .slider__window .slider__track {
+  transform: translate(-75%);
+}
