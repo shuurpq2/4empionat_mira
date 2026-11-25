@@ -21,6 +21,7 @@ main {
 
 #search-button {
   border-radius: 0;
+  border: none;
   border-left: .1rem solid var(--current-separators-color);
 }
 
@@ -95,11 +96,13 @@ main {
   justify-content: space-between;
   gap: .25rem;
   flex-direction: column;
+  border: .1rem solid var(--current-separators-color);
   border-radius: var(--global-border-radius);
   background-color: var(--current-secondary-bg-color);
   transition: all .25s;
 
   & > img {
+    border: inherit;
     border-radius: inherit;
   }
 }
