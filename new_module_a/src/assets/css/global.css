@@ -130,11 +130,11 @@ main {
   cursor: pointer;
 
   &:hover {
-    opacity: .75;
+    filter: brightness(1.03);
   }
 
   &:active {
-    opacity: 1;
+    filter: brightness(.95);
   }
 }
 
