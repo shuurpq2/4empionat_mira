@@ -139,3 +139,7 @@ main {
 .landmark-card__more-button {
   background-color: var(--current-main-bg-color);
 }
+
+#slider-section {
+  width: 40rem;
+}
