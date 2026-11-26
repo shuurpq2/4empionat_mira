@@ -1,0 +1,7 @@
+main {
+  place-items: center;
+}
+
+.login-form__button {
+  background-color: var(--current-main-bg-color);
+}
