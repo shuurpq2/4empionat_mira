@@ -1,0 +1,19 @@
+.user-info {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  gap: .5rem;
+  border: .1rem solid var(--current-separators-color);
+  border-radius: var(--global-border-radius);
+  background-color: var(--current-secondary-bg-color);
+}
+
+.user-info__main-info {
+  font-size: 2rem;
+}
+
+.user-info__sub-info {
+  width: fit-content;
+  
+}
