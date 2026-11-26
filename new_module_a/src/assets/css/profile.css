@@ -1,3 +1,7 @@
+:root:has(#theme-switch:checked) {
+  --theme: dark;
+}
+
 .user-info {
   width: fit-content;
   display: flex;
