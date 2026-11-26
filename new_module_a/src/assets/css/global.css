@@ -178,3 +178,21 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
+.form__input-error-message {
+  display: none;
+}
+
+.form__input {
+  &:user-valid {
+    border-color: green;
+  }
+
+  &:user-invalid {
+    border-color: darkred;
+  }
+
+  &:user-invalid + .form__input-error-message {
+    display: flex;
+  }
+}

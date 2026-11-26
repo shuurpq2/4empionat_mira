@@ -25,33 +25,36 @@
     <form class="form register-form" action="profile.html" method="post">
       <label class="form__input-label">
         E-mail
-        <input class="input" type="email" required>
+        <input class="input form__input" type="email" required>
+        <div class="form__input-error-message">Введите корректный E-mail</div>
       </label>
       <label class="form__input-label">
         Фамилия
-        <input class="input" type="text" required>
+        <input class="input form__input" type="text" required>
       </label>
       <label class="form__input-label">
         Имя
-        <input class="input" type="text" required>
+        <input class="input form__input" type="text" required>
       </label>
       <label class="form__input-label">
         Пароль
-        <input class="input" type="password" required>
+        <input class="input form__input" type="password" minlength="8" required>
+        <div class="form__input-error-message">Введите корректный пароль (длина не менее 8 символов)</div>
       </label>
       <label class="form__input-label">
         Повтор пароля
-        <input class="input" type="password" required>
+        <input class="input form__input" type="password" minlength="8" required>
+        <div class="form__input-error-message">Введите корректный пароль (длина не менее 8 символов)</div>
       </label>
       <label class="form__input-label">
         Дата рождения (необязательно)
-        <input class="input" type="date">
+        <input class="input form__input" type="date">
       </label>
       <label class="form__input-label">
         Номер телефона (необязательно)
-        <input class="input" type="tel">
+        <input class="input form__input" type="tel">
       </label>
-      <label class="input-label">
+      <label class="form__input-label register-form__checkbox">
         <input class="input" type="checkbox" required>
         Согласен на обработку персональных данных
       </label>
