@@ -164,7 +164,7 @@ footer {
 }
 
 .form {
-  width: 15rem;
+  width: 25rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -172,4 +172,9 @@ footer {
   border: .1rem solid var(--current-separators-color);
   border-radius: var(--global-border-radius);
   background-color: var(--current-secondary-bg-color);
+}
+
+.form__input-label {
+  display: flex;
+  flex-direction: column;
 }
