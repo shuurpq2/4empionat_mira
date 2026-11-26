@@ -15,5 +15,8 @@
 
 .user-info__sub-info {
   width: fit-content;
-  
+
+  & td {
+    color: var(--current-secondary-text-color);
+  }
 }
