@@ -189,7 +189,7 @@ main {
     border:.15rem solid var(--current-separators-color);
     border-radius: 50%;
     background-color: var(--current-main-bg-color);
-    transition: background-color, box-shadow .15s;
+    transition: background-color .15s, box-shadow .15s;
 
   }
 
